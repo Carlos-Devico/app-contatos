@@ -12,7 +12,7 @@ export default class App extends React.Component {
   ];
 
   const textElements = names.map(x => {
-    return <Text>{x}</Text>
+    return <Text key={x}>{x}</Text>
   })
   return textElements;
  }
