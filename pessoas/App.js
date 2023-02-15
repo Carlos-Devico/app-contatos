@@ -33,7 +33,7 @@ componentDidMount(){
   render(){
     return (
       <View>
-        <Header titulo="Pessoas !"/>
+        <Header titulo="Pessoas"/>
 
         <ListaPessoas peoples = { this.state.peoples }/>
         
