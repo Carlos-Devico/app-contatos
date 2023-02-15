@@ -1,32 +1,41 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import Header from './src/components/Header';
+import ListaPessoas from './src/components/PeopleList';
 import axios from 'axios';
 
-import Header from './src/components/Header';
 
 export default class App extends React.Component {
- renderList(){
-  /* Promisses */
-  axios.get('https://randomuser.me/api/?nat=br&results=5').then(response => {
 
-    const { results } = response.data
-    const names  = results.map(people => people.name.first);
-    console.log(names);
+  constructor(props){
+    super(props);
+
+    this.state = {
+      // estado vazio
+      peoples: []
+    };
+  }
+
+componentDidMount(){
+  axios
+  .get('https://randomuser.me/api/?nat=br&results=5')
+  .then(response => {
+    const { results } = response.data;
+    this.setState({
+      peoples: results
+    });
     
-  })
+  });
+}
 
-  const textElements = names.map(x => {
-    return <Text key={x}>{x}</Text>
-  })
-  return textElements;
- }
 
 
   render(){
     return (
       <View>
         <Header titulo="Pessoas"/>
-        { this.renderList() }
+
+        <ListaPessoas peoples = { this.state.peoples }/>
         
       </View>
     );
