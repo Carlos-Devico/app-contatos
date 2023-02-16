@@ -39,11 +39,15 @@ const styles = StyleSheet.create({
     },
     lineText: {
         fontSize: 20,
-        paddingLeft: 15
+        paddingLeft: 15,
+        flex: 7
     },
     avatar: {
+        marginStart: 15,
         aspectRatio: 1 ,
-        width: 50
+       
+        flex: 1,
+        borderRadius: 50
     }
 });
 
