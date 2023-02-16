@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import Header from './src/components/Header';
-import ListaPessoas from './src/components/PeopleList';
+import ListaContatos from './src/components/ContactList';
 import axios from 'axios';
 
 
@@ -12,7 +12,7 @@ export default class App extends React.Component {
 
     this.state = {
       // estado vazio
-      peoples: []
+      contatos: []
     };
   }
 
@@ -22,7 +22,7 @@ componentDidMount(){
   .then(response => {
     const { results } = response.data;
     this.setState({
-      peoples: results
+      contatos: results
     });
     
   });
@@ -35,7 +35,7 @@ componentDidMount(){
       <View>
         <Header titulo="Pessoas"/>
 
-        <ListaPessoas peoples = { this.state.peoples }/>
+        <ListaContatos contatos = { this.state.contatos }/>
         
       </View>
     );

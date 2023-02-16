@@ -1,14 +1,14 @@
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
-import PeopleListItem from './PeopleListItem'
+import ContactListItem from './ContactListItem'
 
-const PeopleList = props =>{
-    const { peoples } = props;
+const ContactList = props =>{
+    const { contatos } = props;
     
     
 
-const items = peoples.map(people => 
-    <PeopleListItem key = {people.name.first} people={ people } />
+const items = contatos.map(contato => 
+    <ContactListItem key = {contato.name.first} contato={ contato } />
 )
 
   return  (
@@ -24,4 +24,4 @@ const styles = StyleSheet.create({
     }
 });
 
-export default PeopleList;
+export default ContactList;

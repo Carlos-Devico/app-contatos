@@ -4,15 +4,15 @@ import { capitalizeFirstLetter } from "../util";
 
 
 
-const PeopleListItem = props => {
-    const { people } = props;
-    const { title, first, last } = people.name;
+const ContactListItem = props => {
+    const { contato } = props;
+    const { title, first, last } = contato.name;
     return(
 
         <View style = { styles.line }>
 
         {/* Inserindo o avatar da API aqui */}
-        <Image style={styles.avatar} source={ {uri: people.picture.thumbnail} } />
+        <Image style={styles.avatar} source={ {uri: contato.picture.thumbnail} } />
 
            <Text style={ styles.lineText }>
              { `${
@@ -51,4 +51,4 @@ const styles = StyleSheet.create({
     }
 });
 
-export default PeopleListItem;
+export default ContactListItem;
