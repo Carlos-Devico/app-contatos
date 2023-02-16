@@ -1,45 +1,17 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import Header from './src/components/Header';
-import ListaContatos from './src/components/ContactList';
-import axios from 'axios';
+import 'react-native-gesture-handler'
+import {createAppContainer} from 'react-navigation';
+import {createStackNavigator} from 'react-navigation-stack';
+import ContactPage from "./src/pages/ContactPage";
 
-
-export default class App extends React.Component {
-
-  constructor(props){
-    super(props);
-
-    this.state = {
-      // estado vazio
-      contatos: []
-    };
+ 
+const AppNavigator = createStackNavigator({
+  'Contatos': {
+    screen: ContactPage
   }
-
-componentDidMount(){
-  axios
-  .get('https://randomuser.me/api/?nat=br&results=5')
-  .then(response => {
-    const { results } = response.data;
-    this.setState({
-      contatos: results
-    });
-    
-  });
-}
-
-
-
-  render(){
-    return (
-      <View>
-        <Header titulo="Pessoas"/>
-
-        <ListaContatos contatos = { this.state.contatos }/>
-        
-      </View>
-    );
-  }
-}
-
-
+});
+ 
+ 
+const AppContainer = createAppContainer(AppNavigator);
+ 
+ 
+export default AppContainer;

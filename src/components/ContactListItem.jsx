@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, StyleSheet, Image } from "react-native";
+import { View, Text, StyleSheet, Image, TouchableOpacity } from "react-native";
 import { capitalizeFirstLetter } from "../util";
 
 
@@ -9,22 +9,27 @@ const ContactListItem = props => {
     const { title, first, last } = contato.name;
     return(
 
-        <View style = { styles.line }>
+        <TouchableOpacity onPress={() => console.log('Click funcionando Uhu!!', first, last)}>  
+        
+            <View style = { styles.line }>
 
-        {/* Inserindo o avatar da API aqui */}
-        <Image style={styles.avatar} source={ {uri: contato.picture.thumbnail} } />
+            {/* Inserindo o avatar da API aqui */}
+            <Image style={styles.avatar} source={ {uri: contato.picture.thumbnail} } />
 
-           <Text style={ styles.lineText }>
-             { `${
-                   capitalizeFirstLetter(title)
-                } ${
-                   capitalizeFirstLetter(first)
-                } ${
-                   capitalizeFirstLetter(last)
-                }`
-             }
-                 </Text>
-        </View>
+            <Text style={ styles.lineText }>
+                { `${
+                    capitalizeFirstLetter(title)
+                    } ${
+                    capitalizeFirstLetter(first)
+                    } ${
+                    capitalizeFirstLetter(last)
+                    }`
+                }
+                    </Text>
+            </View>
+        
+        </TouchableOpacity>
+
 
     );
 }
