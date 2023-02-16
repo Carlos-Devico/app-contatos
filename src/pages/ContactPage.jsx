@@ -1,0 +1,45 @@
+import React from 'react';
+import { StyleSheet, Text, View } from 'react-native';
+import Header from '../components/Header';
+import ListaContatos from '../components/ContactList';
+import axios from 'axios';
+
+
+export default class App extends React.Component {
+
+  constructor(props){
+    super(props);
+
+    this.state = {
+      // estado vazio
+      contatos: []
+    };
+  }
+
+componentDidMount(){
+  axios
+  .get('https://randomuser.me/api/?nat=br&results=3')
+  .then(response => {
+    const { results } = response.data;
+    this.setState({
+      contatos: results
+    });
+    
+  });
+}
+
+
+
+  render(){
+    return (
+      <View>
+        <Header titulo="Pessoas"/>
+
+        <ListaContatos contatos = { this.state.contatos }/>
+        
+      </View>
+    );
+  }
+}
+
+
