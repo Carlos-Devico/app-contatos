@@ -8,7 +8,7 @@
 
  A aplicação consiste em ...
 
- ![Mobile 1](assets/falha.png)
+ ![Mobile 1](assets/imagem1.png)
 
 
  - Pré requisitos: Java 8 ou superior
@@ -16,7 +16,11 @@
 
 ## Competências
 ```bash
-
+ - JSX
+ - Flex-Box
+ - Lists and Keys React
+ - integração com API
+ - React Navigation
 ```
 
 
@@ -38,10 +42,10 @@
 ##  Como rodar o projeto
 ```bash
 # clonar o repositorio
-git clone https://github.com/Carlos-Devico/app-pessoas.git
+git clone https://github.com/Carlos-Devico/app-contatos.git
 
-# Entrar na pasta principal do projeto 
- - cd pessoas
+# Na pasta principal do projeto 
+ - cd app-contatos
  
  # Instalar as dependências necessárias
  - yarn install
