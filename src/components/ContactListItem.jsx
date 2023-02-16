@@ -9,7 +9,10 @@ const ContactListItem = props => {
     const { title, first, last } = contato.name;
     return(
 
-        <TouchableOpacity onPress={() => console.log('Click funcionando Uhu!!', first, last)}>  
+        <TouchableOpacity onPress={() => {
+            console.log('Click funcionando Uhu!!', first, last);
+            // props.navigation.navigate('ContactDetail')
+        }}>  
         
             <View style = { styles.line }>
 

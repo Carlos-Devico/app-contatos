@@ -13,7 +13,7 @@ const Header = (props) => (
 /* Stylesheet */
 const style = StyleSheet.create({
     container: {
-        marginTop: 21,
+        marginTop: 15,
         backgroundColor: '#001f3d',
         alignItems: 'center',
         justifyContent: 'center'

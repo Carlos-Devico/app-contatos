@@ -5,7 +5,7 @@ import ListaContatos from '../components/ContactList';
 import axios from 'axios';
 
 
-export default class App extends React.Component {
+export default class ContactPage extends React.Component {
 
   constructor(props){
     super(props);
@@ -18,11 +18,12 @@ export default class App extends React.Component {
 
 componentDidMount(){
   axios
-  .get('https://randomuser.me/api/?nat=br&results=3')
+  .get('https://randomuser.me/api/?nat=br&results=5')
   .then(response => {
     const { results } = response.data;
     this.setState({
-      contatos: results
+      contatos: results,
+      loading: false,
     });
     
   });
@@ -31,12 +32,11 @@ componentDidMount(){
 
 
   render(){
+    
+    this.props.navigation.navigate('ContactDetail');
     return (
       <View>
-        <Header titulo="Pessoas"/>
-
         <ListaContatos contatos = { this.state.contatos }/>
-        
       </View>
     );
   }
