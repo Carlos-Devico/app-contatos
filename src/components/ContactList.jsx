@@ -20,7 +20,7 @@ const items = contatos.map(contato =>
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: '#2c698e',
+        backgroundColor: '#274bc2a2',
     }
 });
 

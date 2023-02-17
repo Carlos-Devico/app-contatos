@@ -11,4 +11,5 @@ export default class ContactDetailPage extends React.Component{
     }
 }
 
-// parei aqui aula 70 tempo 5:50
+// parei aqui aula 72 tempo 1:24
+// https://www.udemy.com/course/construa-aplicativos-mobile-do-zero-com-react-native/learn/lecture/9533128#questions

@@ -33,16 +33,16 @@ const AppNavigator = createStackNavigator({
 {
   defaultNavigationOptions: {
     title: 'Contatos',
-    headerTintColor:'#e69413',
+    headerTintColor:'#f1a11f',
    
 
     headerStyle: {
-      backgroundColor: '#0bdb',
+      backgroundColor: '#00dda6cc',
       borderBottomWidth: 1,
-      borderBottomColor: '#e69413',
+      borderBottomColor: '#038033',
     },
     headerTitleStyle: {
-      color:'white',
+      color:'#ffffff',
       fontSize: 20,
       alignSelf: 'center',
       
