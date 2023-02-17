@@ -1,29 +1,32 @@
-import React from "react";
-import { View, Text, StyleSheet } from "react-native";
+import { FlatList, Text, StyleSheet } from "react-native";
 import ContactListItem from './ContactListItem'
 
-const ContactList = props =>{
-    const { contatos, onPressItem} = props;
-    
-    
 
-const items = contatos.map(contato => 
-    <ContactListItem key = {contato.name.first} contato={ contato } navigateToContactDetail={ onPressItem } />
-)
+const ContactList = props => {
+	const { contatos, onPressItem } = props ;
 
-  return  (
-        <View style={styles.container}>
-            { items }
-        </View>
-    )
+	return (
+		<FlatList
+			style={styles.container}
+			data={contatos}
+            // renderiando cada item com renderItem
+			renderItem={({ item }) => (
+				<ContactListItem
+					contato={item}
+					navigateToContactDetail={onPressItem} />
+			)}
+            // define chaves para cada item, usar o email
+			keyExtractor={item => item.email} />
+	);
 };
 
 const styles = StyleSheet.create({
-    container: {
-        backgroundColor: '#274bc2a2',
-    }
-});
+	container: {
+		backgroundColor: '#e2f9ff'
+	},
+})
 
 export default ContactList;
+
 
 
