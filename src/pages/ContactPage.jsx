@@ -33,10 +33,12 @@ componentDidMount(){
 
   render(){
     
-    this.props.navigation.navigate('ContactDetail');
+    // this.props.navigation.navigate('ContactDetail');
     return (
       <View>
-        <ListaContatos contatos = { this.state.contatos }/>
+        <ListaContatos contatos = { this.state.contatos } onPressItem={ () => {
+          this.props.navigation.navigate('ContactDetail');
+        } }/>
       </View>
     );
   }

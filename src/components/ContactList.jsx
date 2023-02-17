@@ -3,12 +3,12 @@ import { View, Text, StyleSheet } from "react-native";
 import ContactListItem from './ContactListItem'
 
 const ContactList = props =>{
-    const { contatos } = props;
+    const { contatos, onPressItem} = props;
     
     
 
 const items = contatos.map(contato => 
-    <ContactListItem key = {contato.name.first} contato={ contato } />
+    <ContactListItem key = {contato.name.first} contato={ contato } navigateToContactDetail={ onPressItem } />
 )
 
   return  (

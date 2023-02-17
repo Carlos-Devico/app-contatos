@@ -5,13 +5,13 @@ import { capitalizeFirstLetter } from "../util";
 
 
 const ContactListItem = props => {
-    const { contato } = props;
+    const { contato, navigateToContactDetail} = props;
     const { title, first, last } = contato.name;
     return(
 
         <TouchableOpacity onPress={() => {
             console.log('Click funcionando Uhu!!', first, last);
-            // props.navigation.navigate('ContactDetail')
+            navigateToContactDetail();
         }}>  
         
             <View style = { styles.line }>
