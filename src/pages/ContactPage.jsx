@@ -36,8 +36,8 @@ componentDidMount(){
     // this.props.navigation.navigate('ContactDetail');
     return (
       <View>
-        <ListaContatos contatos = { this.state.contatos } onPressItem={ () => {
-          this.props.navigation.navigate('ContactDetail');
+        <ListaContatos contatos = { this.state.contatos } onPressItem={ pageParams => {
+          this.props.navigation.navigate('ContactDetail', pageParams);
         } }/>
       </View>
     );

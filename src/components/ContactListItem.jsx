@@ -11,7 +11,7 @@ const ContactListItem = props => {
 
         <TouchableOpacity onPress={() => {
             console.log('Click funcionando Uhu!!', first, last);
-            navigateToContactDetail();
+            navigateToContactDetail({ contato });
         }}>  
         
             <View style = { styles.line }>
